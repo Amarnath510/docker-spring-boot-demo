@@ -1,0 +1,30 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.6.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+// NOTE: This project is created to generate a jar(via options in start.spring.io)
+// To generate: In cmd prompt, $ "./gradlew clean build -x test" then cd build/libs
+// To have specific name to jar, open setting.gradle and rename it to "hello-greet"
+// To have specific version to jar, below we have version change it (I changed from 0.0.1-SNAPSHOT to none)
+// Finally, jar under build/libs will be "hello-greet.jar"
+
+group = 'com.docker'
+version = ''
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
