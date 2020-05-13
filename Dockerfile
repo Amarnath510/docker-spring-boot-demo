@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk
 
-ADD ./build/libs/hello-greet.jar ./hello-greet.jar
+ADD ./hello-greet.jar ./hello-greet.jar
 
 # Port where we are running application
 EXPOSE 8181
